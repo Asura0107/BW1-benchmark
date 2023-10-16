@@ -1,8 +1,9 @@
+
 body {
     background-image: url(./Assets/bg.jpg);
     background-size: cover;
 margin: 50px 200px 100px ;
- 
+background-repeat: no-repeat;
     height: 100%;
 }
 /* header */
