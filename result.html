@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>result</title>
+    <link rel="stylesheet" href="./reset.css" />
     <link rel="stylesheet" href="./result.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,6 +18,10 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500&family=Inter:wght@400;600;700;800&family=Montserrat+Alternates:wght@400;600&family=Montserrat:wght@400;600;700&family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Outfit:wght@400;600;800&family=Poppins:wght@400;600&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js"
+    />
   </head>
   <body>
     <header>
@@ -27,18 +32,43 @@
         <h1 class="fonth1">Results</h1>
         <h3>The summary of your answers:</h3>
       </div>
-      <article>
-        <div class="correct">
+      <section class="correct">
+        <div>
           <h2>Correct</h2>
         </div>
-        <div></div>
-        <div class="Wrong">
+      </section>
+      <section class="donut">
+        <div class="chart-container">
+          <!-- <canvas class="my-chart"></canvas> -->
+          <canvas
+            class="my-chart"
+            width="375"
+            height="375"
+            style="
+              display: block;
+              box-sizing: border-box;
+              height: 300px;
+              width: 300px;
+            "
+          ></canvas>
+        </div>
+        <!-- <div class="details">
+          <ul>
+            <li>correct</li>
+            <li>wrong</li>
+          </ul>
+        </div> -->
+      </section>
+      <section class="Wrong">
+        <div>
           <h2>Wrong</h2>
         </div>
-      </article>
+      </section>
     </main>
     <footer>
       <button type="submit">RATE US</button>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./result.js"></script>
   </body>
 </html>
