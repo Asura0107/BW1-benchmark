@@ -7,7 +7,7 @@ body {
 }
 main {
   text-align: center;
-  margin: 50px 100px ;
+  margin: 50px 100px;
 }
 #container-logo img {
   width: 200px;
@@ -30,12 +30,12 @@ main {
 .inner {
   height: 150px;
   border-radius: 50%;
-
   box-shadow: inset 4px 4px 6px -1px (0, 0, 0, 0.2), inset -4px -4px 6px -1px rgba(0, 0, 0, 0.2),
     -0.5px -0.5px 0px rgba(255, 255, 255, 1), 0.5px 0.5px 0px rgba(0, 0, 0, 15), 0px 12px 10px -10px rgb(0, 0, 0.05);
 }
 
-#number {
+.inner .string {
+  color: white;
 }
 
 circle {
@@ -57,10 +57,6 @@ svg {
   }
 }
 
-#countdown {
-  color: white;
-}
-
 #mainTitle h1 {
   color: aliceblue;
   font-weight: 200;
@@ -77,9 +73,6 @@ svg {
 
 #twoButtons {
   display: inline-block;
- 
- 
-  
 }
 
 #twoButtons .btn1 {
@@ -116,9 +109,6 @@ svg {
 }
 #secondButtons {
   display: block;
-  
- 
-  
 }
 
 #secondButtons .btn3 {
