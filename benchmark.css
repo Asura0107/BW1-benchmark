@@ -11,10 +11,51 @@ body {
   padding-left: 50px;
 }
 
-#counter .donutCounter p {
-  text-align: right;
-  color: aliceblue;
-  padding-right: 50px;
+#container-logo .counter {
+  display: inline;
+  float: right;
+  padding-right: 100px;
+}
+
+.outer {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15), -6px -6px 10px -1px rgba(255, 255, 255, 0, 7);
+  padding: 20px;
+}
+.inner {
+  height: 150px;
+  border-radius: 50%;
+
+  box-shadow: inset 4px 4px 6px -1px (0, 0, 0, 0.2), inset -4px -4px 6px -1px rgba(0, 0, 0, 0.2),
+    -0.5px -0.5px 0px rgba(255, 255, 255, 1), 0.5px 0.5px 0px rgba(0, 0, 0, 15), 0px 12px 10px -10px rgb(0, 0, 0.05);
+}
+
+#number {
+}
+
+circle {
+  fill: none;
+  stroke: url(#GradientColor);
+  stroke-width: 20px;
+  stroke-dasharray: 472;
+  stroke-dashoffset: 472;
+  animation: anim 20s linear forwards;
+}
+svg {
+  top: 0;
+  left: 0;
+}
+
+@keyframes anim {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+#countdown {
+  color: white;
 }
 
 #mainTitle h1 {
@@ -23,7 +64,8 @@ body {
   font-size: 3rem;
   font-family: Outift, sans-serif;
   text-align: center;
-  padding-top: 50px;
+
+  margin-top: 225px;
 }
 
 #mainTitle strong {
