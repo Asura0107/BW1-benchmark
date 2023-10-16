@@ -15,6 +15,7 @@ main {
 }
 
 #container-logo .counter {
+  position: relative;
   display: inline;
   float: right;
   padding-right: 100px;
@@ -28,6 +29,7 @@ main {
   padding: 20px;
 }
 .inner {
+  position: absolute;
   height: 150px;
   border-radius: 50%;
   box-shadow: inset 4px 4px 6px -1px (0, 0, 0, 0.2), inset -4px -4px 6px -1px rgba(0, 0, 0, 0.2),
@@ -36,6 +38,11 @@ main {
 
 .inner .string {
   color: white;
+  position: absolute;
+  left: 50px;
+  top: 35px;
+  font-size: 13px;
+  text-align: center;
 }
 
 circle {
