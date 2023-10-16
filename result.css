@@ -1,16 +1,18 @@
+* {
+  box-sizing: border-box;
+}
 body {
   background-image: url(/Assets/bg.jpg);
   background-position: center;
   color: whitesmoke;
-  /* width: 1300px; */
   background-repeat: no-repeat;
   background-size: cover;
-
   height: 100%;
-  /* margin: auto; */
+  width: auto;
   font-family: "Inter", sans-serif;
   font-size: 16px;
 }
+
 main {
   text-align: center;
 }
@@ -22,7 +24,7 @@ header {
   margin: 30px 0 40px;
 }
 header img {
-  width: 200px;
+  width: 300px;
   padding: 10px 80px;
 }
 button {
@@ -36,8 +38,13 @@ button {
 }
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: "Outfit", sans-serif;
+}
+h4 {
+  font-size: 16px;
+  font-weight: 700;
 }
 h2,
 h3 {
@@ -57,14 +64,74 @@ section {
   vertical-align: -webkit-baseline-middle;
   justify-content: space-evenly;
 }
+.correct {
+  text-align: left;
+}
+.perc {
+  font-size: 40px;
+  font-weight: 600;
+}
+.wrong + p {
+  text-align: right;
+}
+
 .fonth1 {
   font-size: 60px;
   font-weight: 700;
 }
 
-.donut {
-  text-align: center;
-  margin: 30px 80px 0;
+.skill {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin: 80px 50px 0;
+}
+.outer {
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  padding: 20px;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+}
+.inner {
+  height: 260px;
+  width: 260px;
+  border-radius: 50%;
+  position: absolute;
 
-  /* justify-content: space-evenly; */
+  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+    inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+    -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+    0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+}
+circle {
+  fill: none;
+  stroke: url(#GradientColor);
+  stroke-width: 20px;
+  stroke-dasharray: 1100;
+  stroke-dashoffset: 1100;
+  animation: anim 2s linear forwards;
+}
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@keyframes anim {
+  100% {
+    stroke-dashoffset: 500;
+  }
+}
+#number {
+  position: absolute;
+  text-align: center;
+  top: 60px;
+  left: 10px;
+  padding: 10px 10px;
+}
+#number span {
+  color: #00ffff;
+  font-weight: 700;
+  margin-bottom: 5px;
 }

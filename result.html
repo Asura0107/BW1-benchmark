@@ -18,10 +18,6 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500&family=Inter:wght@400;600;700;800&family=Montserrat+Alternates:wght@400;600&family=Montserrat:wght@400;600;700&family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Outfit:wght@400;600;800&family=Poppins:wght@400;600&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js"
-    />
   </head>
   <body>
     <header>
@@ -35,40 +31,50 @@
       <section class="correct">
         <div>
           <h2>Correct</h2>
+          <p class="perc">66.7%</p>
+          <p>4/7 question</p>
         </div>
       </section>
-      <section class="donut">
-        <div class="chart-container">
-          <!-- <canvas class="my-chart"></canvas> -->
-          <canvas
-            class="my-chart"
-            width="375"
-            height="375"
-            style="
-              display: block;
-              box-sizing: border-box;
-              height: 300px;
-              width: 300px;
-            "
-          ></canvas>
+      <section class="skill">
+        <div class="outer">
+          <div class="inner">
+            <div id="number">
+              <h4>Congratulation!</h4>
+              <span>You passed the exam.</span>
+              <p>
+                We'll send you the certificate in few minutes. Check your email
+                (includin promotion/spam folder)
+              </p>
+            </div>
+          </div>
         </div>
-        <!-- <div class="details">
-          <ul>
-            <li>correct</li>
-            <li>wrong</li>
-          </ul>
-        </div> -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          version="1.1"
+          width="400px"
+          height="400px"
+        >
+          <defs>
+            <linearGradient id="GradientColor">
+              <stop offset="0%" stop-color="#00FFFF" />
+              <stop offset="100%" stop-color="#00FFFF" />
+            </linearGradient>
+          </defs>
+          <circle cx="150" cy="150" r="140" stroke-linecap="round" />
+        </svg>
       </section>
       <section class="Wrong">
         <div>
           <h2>Wrong</h2>
+          <p class="perc">33,3%</p>
+          <p>2/6 question</p>
         </div>
       </section>
     </main>
     <footer>
       <button type="submit">RATE US</button>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <script src="./result.js"></script>
   </body>
 </html>
