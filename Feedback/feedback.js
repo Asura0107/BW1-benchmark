@@ -7,9 +7,9 @@ const starForLoop = () => {
       
         
       
-        starContainer.addEventListener('click', () => {
-            starContainer.classList.add(starContainerClicked)
-        })
+        // starContainer.addEventListener('mouseover', () => {
+        //     starContainer.classList.add("stella-clicked")
+        // })
         
         section.appendChild(starContainer)
 }

@@ -86,25 +86,25 @@ display: block;
         font-weight: 700;
     }
     .stella-container {
-  background-image: url(/Feedback/star.svg);
+  background-image: url(./star.svg);
   width: 47px ;
   display: inline-block;
   height: 46px; 
   padding: 5px;
   margin-top: 10px;
   background-repeat: no-repeat;
-  
-  
-  
-  };
-    .clicked {
-  background-image: url(/Feedback/star1.svg);
-background-color: blue;
+};
+    .stella-clicked {
+  background-image: url(./star1.svg);
   width: 47px ;
   display: inline-block;
   height: 46px; 
   padding: 5px;
   margin-top: 10px;
-  background-repeat: no-repeat
-  };
+  background-repeat: no-repeat;
+};
+  
+  
+  
+  
   
