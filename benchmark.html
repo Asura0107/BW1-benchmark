@@ -9,7 +9,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./benchmark.css" />
-    <link rel="stylesheet" href="./benchmark.js" />
   </head>
   <body>
     <header>
@@ -18,9 +17,9 @@
         <div class="counter">
           <div class="outer">
             <div class="inner">
-              <div class="string">
+              <div class="timerDiv">
                 <p>SECONDS</p>
-                <p>20</p>
+                <span class="time-left">10</span>
                 <p>remaining</p>
               </div>
               <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
@@ -38,22 +37,16 @@
       </div>
     </header>
     <main>
-      <article id="mainTitle">
-        <h1>How can I create a <br /><strong>checkbox in HTML?</strong></h1>
-      </article>
-      <section id="twoButtons">
-        <button class="btn1">primo</button>
-
-        <button class="btn2">secondo</button>
-      </section>
-      <section id="secondButtons">
-        <button class="btn3">terzo</button>
-
-        <button class="btn4">quarto</button>
-      </section>
-      <article id="switch-container">
-        <p>QUESTION 1 <span>/10</span></p>
-      </article>
+      <div id="displayContainer">
+        <div class="container">
+          <!-- domande e optioni qui -->
+          <p>abcd</p>
+        </div>
+        <div class="numberOfCount">
+          <span class="numberOfQuestion">QUestion 1/10</span>
+        </div>
+      </div>
     </main>
+    <script src="./benchmark.js"></script>
   </body>
 </html>
