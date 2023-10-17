@@ -36,6 +36,9 @@ button {
   padding: 10px 50px;
   cursor: pointer;
 }
+button:hover {
+  background-color: #d20094;
+}
 h1,
 h2,
 h3,
@@ -80,7 +83,7 @@ section {
   font-weight: 700;
 }
 
-.skill {
+.circleContainer {
   width: 300px;
   height: 300px;
   position: relative;
@@ -105,13 +108,27 @@ section {
     -0.5px -0.5px 0px rgba(255, 255, 255, 1),
     0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);
 }
-circle {
+.circle1 {
   fill: none;
   stroke: url(#GradientColor);
   stroke-width: 20px;
   stroke-dasharray: 1100;
   stroke-dashoffset: 1100;
   animation: anim 2s linear forwards;
+}
+.circle2 {
+  fill: none;
+  stroke: #d20094;
+  stroke-width: 20px;
+  stroke-dasharray: 1100;
+  stroke-dashoffset: 1100;
+  animation: anime 2s linear forwards;
+}
+
+@keyframes anime {
+  100% {
+    stroke-dashoffset: 200;
+  }
 }
 svg {
   position: absolute;
