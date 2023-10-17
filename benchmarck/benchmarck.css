@@ -1,0 +1,37 @@
+body {
+    background-image: url(./bg.jpg);
+    background-size: cover;
+    margin: 50px 200px 100px ;
+    background-repeat: no-repeat;
+        height: 100%;
+}
+p {
+    font-size: 16px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    }
+    h1 {
+        font-size: 60px;
+        color: white;
+        width: 100%;
+        font-family: 'Outfit', sans-serif;
+    }
+/* HEADER */
+#epicode-logo {
+    width: 200px;
+}
+/* MAIN */
+#questionContainer {
+    margin: 150px auto;
+    text-align: center;
+}
+#buttonsArea {
+    margin-top: 50px;
+    }
+    button {
+        font-size: 16px;
+        margin: 40px;
+        padding: 20px 40px;
+        border-radius: 20px;
+    }
