@@ -5,12 +5,7 @@ const questions = [
     difficulty: "easy",
     question: "What does CPU stand for?",
     correct_answer: "Central Processing Unit",
-    answers: [
-      "Central Processing Unit",
-      "Central Process Unit",
-      "Computer Personal Unit",
-      "Central Processor Unit"
-    ]
+    answers: ["Central Processing Unit", "Central Process Unit", "Computer Personal Unit", "Central Processor Unit"]
   },
   {
     category: "Science: Computers",
@@ -33,8 +28,7 @@ const questions = [
     category: "Science: Computers",
     type: "boolean",
     difficulty: "easy",
-    question:
-      "Pointers were not used in the original C programming language; they were added later on in C++.",
+    question: "Pointers were not used in the original C programming language; they were added later on in C++.",
     correct_answer: "False",
     answers: ["False", "True"]
   },
@@ -42,8 +36,7 @@ const questions = [
     category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
-    question:
-      "What is the most preferred image format used for logos in the Wikimedia database?",
+    question: "What is the most preferred image format used for logos in the Wikimedia database?",
     correct_answer: ".svg",
     answers: [".svg", ".png", ".jpeg", ".gif"]
   },
@@ -53,19 +46,13 @@ const questions = [
     difficulty: "easy",
     question: "In web design, what does CSS stand for?",
     correct_answer: "Cascading Style Sheet",
-    answers: [
-      "Cascading Style Sheet",
-      "Counter Strike: Source",
-      "Corrective Style Sheet",
-      "Computer Style Sheet"
-    ]
+    answers: ["Cascading Style Sheet", "Counter Strike: Source", "Corrective Style Sheet", "Computer Style Sheet"]
   },
   {
     category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
-    question:
-      "What is the code name for the mobile operating system Android 7.0?",
+    question: "What is the code name for the mobile operating system Android 7.0?",
     correct_answer: "Nougat",
     answers: ["Nougat", "Ice Cream Sandwich", "Jelly Bean", "Marshmallow"]
   },
@@ -89,141 +76,36 @@ const questions = [
     category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
-    question:
-      "Which programming language shares its name with an island in Indonesia?",
+    question: "Which programming language shares its name with an island in Indonesia?",
     correct_answer: "Java",
     answers: ["Java", "Python", "C", "Jakarta"]
   }
 ];
 
-// const quizArray = [
-//   {
-//     id: "0",
-//     questions: "What does CPU stand for?",
-//     options: [
-//       "Central Process Unit",
-//       "Computer Personal Unit",
-//       "Central Processor Unit"
-//     ],
-//     correct: "Central Processing Unit"
-//   },
-//   {
-//     id: "1",
-//     questions:
-//       "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
-//     options: [
-//       "Central Process Unit",
-//       "Computer Personal Unit",
-//       "Central Processor Unit"
-//     ],
-//     correct: "Central Processing Unit"
-//   },
-//   {
-//     id: "2",
-//     questions: "What does CPU stand for?",
-//     options: [
-//       "Central Process Unit",
-//       "Computer Personal Unit",
-//       "Central Processor Unit"
-//     ],
-//     correct: "Central Processing Unit"
-//   },
-//   {
-//     id: "3",
-//     questions: "What does CPU stand for?",
-//     options: [
-//       "Central Process Unit",
-//       "Computer Personal Unit",
-//       "Central Processor Unit"
-//     ],
-//     correct: "Central Processing Unit"
-//   },
-//   {
-//     id: "4",
-//     questions: "What does CPU stand for?",
-//     options: [
-//       "Central Process Unit",
-//       "Computer Personal Unit",
-//       "Central Processor Unit"
-//     ],
-//     correct: "Central Processing Unit"
-//   },
-//   {
-//     id: "5",
-//     questions: "What does CPU stand for?",
-//     options: [
-//       "Central Process Unit",
-//       "Computer Personal Unit",
-//       "Central Processor Unit"
-//     ],
-//     correct: "Central Processing Unit"
-//   },
-//   {
-//     id: "6",
-//     questions: "What does CPU stand for?",
-//     options: [
-//       "Central Process Unit",
-//       "Computer Personal Unit",
-//       "Central Processor Unit"
-//     ],
-//     correct: "Central Processing Unit"
-//   },
-//   {
-//     id: "7",
-//     questions: "What does CPU stand for?",
-//     options: [
-//       "Central Process Unit",
-//       "Computer Personal Unit",
-//       "Central Processor Unit"
-//     ],
-//     correct: "Central Processing Unit"
-//   },
-//   {
-//     id: "8",
-//     questions: "What does CPU stand for?",
-//     options: [
-//       "Central Process Unit",
-//       "Computer Personal Unit",
-//       "Central Processor Unit"
-//     ],
-//     correct: "Central Processing Unit"
-//   },
-//   {
-//     id: "9",
-//     questions: "What does CPU stand for?",
-//     options: [
-//       "Central Process Unit",
-//       "Computer Personal Unit",
-//       "Central Processor Unit"
-//     ],
-//     correct: "Central Processing Unit"
-//   }
-// ];
-
-let timeLeft = document.getElementsByClassName("time-left");
-let timerDiv = document.getElementsByClassName("timerDiv");
 const container = document.querySelector(".container");
 let numberOfQuestion = document.querySelector(".numberOfQuestion");
 let displayContainer = document.getElementById("displayContainer");
 let questionCount;
 let scoreCount = 0;
-let count = 11;
-let countdown;
 
 // timer
 
-const timerDisplay = () => {
-  countdown = setInterval(() => {
+let count = 10;
+const timeLeft = document.querySelector(".timer");
+let timerId = setInterval(countdown, 1000);
+
+function countdown() {
+  if (count == 0) {
+    clearTimeout(timerId);
+    displayNext();
+  } else {
+    timeLeft.innerHTML = count + "s";
     count--;
-    timeLeft.innerHTML = `${count}s`;
-    if (count == 0) {
-      displayNext();
-    }
-  }, 1000);
-};
+  }
+}
 
 function quizCreator() {
-  questions.sort(() => Math.random() - 0.5);
+  // questions.sort(() => Math.random() - 0.5);
 
   // generate quiz
   for (let q of questions) {
@@ -231,7 +113,7 @@ function quizCreator() {
     // quiz card creation
     let div = document.createElement("div");
     div.classList.add("container-mid", "hide");
-    // question number
+    // question number 1di10
     // countOfQuestion.innerHTMLm = 1 + " of" + questions.length + " Question";
     // question
     let question_DIV = document.createElement("p");
@@ -268,8 +150,7 @@ quizCreator();
 // checker function to check if option is correct or not
 function checker(userOption) {
   let userSolution = userOption.innerText;
-  let question =
-    document.getElementsByClassName("container-mid")[questionCount];
+  let question = document.getElementsByClassName("container-mid")[questionCount];
   let options = question.querySelectorAll(".option-div");
 
   // if user clicked answer == correct option stored in object
@@ -291,7 +172,7 @@ function checker(userOption) {
 function initial() {
   questionCount = 0;
   count = 11;
-  clearInterval(countdown);
+  clearTimeout(timerId);
   timerDisplay();
 }
 
