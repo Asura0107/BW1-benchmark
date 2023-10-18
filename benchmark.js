@@ -5,7 +5,12 @@ const questions = [
     difficulty: "easy",
     question: "What does CPU stand for?",
     correct_answer: "Central Processing Unit",
-    answers: ["Central Processing Unit", "Central Process Unit", "Computer Personal Unit", "Central Processor Unit"]
+    answers: [
+      "Central Processing Unit",
+      "Central Process Unit",
+      "Computer Personal Unit",
+      "Central Processor Unit"
+    ]
   },
   {
     category: "Science: Computers",
@@ -28,7 +33,8 @@ const questions = [
     category: "Science: Computers",
     type: "boolean",
     difficulty: "easy",
-    question: "Pointers were not used in the original C programming language; they were added later on in C++.",
+    question:
+      "Pointers were not used in the original C programming language; they were added later on in C++.",
     correct_answer: "False",
     answers: ["False", "True"]
   },
@@ -36,7 +42,8 @@ const questions = [
     category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
-    question: "What is the most preferred image format used for logos in the Wikimedia database?",
+    question:
+      "What is the most preferred image format used for logos in the Wikimedia database?",
     correct_answer: ".svg",
     answers: [".svg", ".png", ".jpeg", ".gif"]
   },
@@ -46,13 +53,19 @@ const questions = [
     difficulty: "easy",
     question: "In web design, what does CSS stand for?",
     correct_answer: "Cascading Style Sheet",
-    answers: ["Cascading Style Sheet", "Counter Strike: Source", "Corrective Style Sheet", "Computer Style Sheet"]
+    answers: [
+      "Cascading Style Sheet",
+      "Counter Strike: Source",
+      "Corrective Style Sheet",
+      "Computer Style Sheet"
+    ]
   },
   {
     category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
-    question: "What is the code name for the mobile operating system Android 7.0?",
+    question:
+      "What is the code name for the mobile operating system Android 7.0?",
     correct_answer: "Nougat",
     answers: ["Nougat", "Ice Cream Sandwich", "Jelly Bean", "Marshmallow"]
   },
@@ -76,36 +89,67 @@ const questions = [
     category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
-    question: "Which programming language shares its name with an island in Indonesia?",
+    question:
+      "Which programming language shares its name with an island in Indonesia?",
     correct_answer: "Java",
     answers: ["Java", "Python", "C", "Jakarta"]
   }
 ];
 
+let timeLeft = document.getElementsByClassName("time-left");
+let timerDiv = document.getElementsByClassName("timerDiv");
 const container = document.querySelector(".container");
 let numberOfQuestion = document.querySelector(".numberOfQuestion");
 let displayContainer = document.getElementById("displayContainer");
-let questionCount;
+const nextbtn = document.getElementById("nextbtn");
+let questioncount;
 let scoreCount = 0;
+let count = 11;
+let countdown;
 
-// timer
+// const timerDisplay = () => {
+//   countdown = setInterval(() => {
+//     count--;
+//     timeLeft.innerHTML = `${count}s`;
+//     if (count == 0) {
+//       displayNext();
+//     }
+//   }, 1000);
+// };
+// const start = () => {
+//   questioncount = 0;
+//   scoreCount = 0;
 
-let count = 10;
-const timeLeft = document.querySelector(".timer");
-let timerId = setInterval(countdown, 1000);
+//   quizCreator();
+// };
 
-function countdown() {
-  if (count == 0) {
-    clearTimeout(timerId);
-    displayNext();
-  } else {
-    timeLeft.innerHTML = count + "s";
-    count--;
-  }
-}
+// next function
+nextbtn.addEventListener(
+  "click",
+  (displaynext = () => {
+    questioncount += 1;
+    // se ultima domanda
+    if (questioncount == questions.length) {
+      displayContainer.classList.add("hide");
+    } else {
+      displayquiz(questioncount);
+    }
+  })
+);
+
+// displayquiz
+const displayquiz = (questioncount) => {
+  let quizcards = document.querySelectorAll(".container-mid");
+  //hide other
+  quizcards.forEach((card) => {
+    card.classList.add("hide");
+  });
+  // display current card
+  quizcards[questioncount].classList.remove("hide");
+};
 
 function quizCreator() {
-  // questions.sort(() => Math.random() - 0.5);
+  //   questions.sort(() => Math.random() - 0.5);
 
   // generate quiz
   for (let q of questions) {
@@ -113,69 +157,59 @@ function quizCreator() {
     // quiz card creation
     let div = document.createElement("div");
     div.classList.add("container-mid", "hide");
-    // question number 1di10
-    // countOfQuestion.innerHTMLm = 1 + " of" + questions.length + " Question";
+    // question number
+    // countOfQuestion.innerHTMLm = 1 + " of" + q.question.length + " Question";
     // question
-    let question_DIV = document.createElement("p");
+
+    let question_DIV = document.createElement("h1");
     question_DIV.classList.add("question");
     question_DIV.innerHTML = q.question;
+    // div.appendChild(question_DIV);
     div.appendChild(question_DIV);
-    container.appendChild(div);
     // options
-    for (let i = 0; i < q(0).answers.length; i++) {
+    for (let i = 0; i < q.answers.length; i++) {
       const btn = document.createElement("button");
       btn.classList.add("option-div");
       btn.innerHTML = q.answers[i];
-      container.appendChild(btn);
+      div.appendChild(btn);
+      //   btn.addEventListener("click", check());
     }
-
-    // div.innerHTML += `
-    //     <button class="option-div" onclick="checker()">
-    //       ${q.options[0]}
-    //     </button> ;
-    //   <button class="option-div" onclick="checker()">
-    //     ${q.options[1]}
-    //   </button>;
-    //   <button class="option-div" onclick="checker()">
-    //     ${q.options[2]}
-    //   </button>;;
-    //   <button class="option-div" onclick="checker()">
-    //     ${q.options[3]}
-    //   </button>`;
-    // container.appendChild(div);
+    container.appendChild(div);
   }
 }
-quizCreator();
 
 // checker function to check if option is correct or not
-function checker(userOption) {
-  let userSolution = userOption.innerText;
-  let question = document.getElementsByClassName("container-mid")[questionCount];
-  let options = question.querySelectorAll(".option-div");
+// function check(userOption) {
+//   let userSolution = userOption.innerText;
+//   let question =
+//     document.getElementsByClassName("container-mid")[questionCount];
+//   let options = question.querySelectorAll(".option-div");
 
-  // if user clicked answer == correct option stored in object
-  if (userSolution === questions[questionCount].correct) {
-    userOption.classList.add("correct");
-    scoreCount++;
-  } else {
-    userOption.classList.add("incorrect");
-    // for making the correct option
-    options.forEach((element) => {
-      if (element.innerText == questions[questionCount].correct) {
-        element.classList.add("correct");
-      }
-    });
-  }
-}
+//   // if user clicked answer == correct option stored in object
+//   if (userSolution === questions[questionCount].correct) {
+//     userOption.classList.add("correct");
+//     scoreCount++;
+//   } else {
+//     userOption.classList.add("incorrect");
+//     // for making the correct option
+//     options.forEach((element) => {
+//       if (element.innerText == questions[questionCount].correct) {
+//         element.classList.add("correct");
+//       }
+//     });
+//   }
+// }
 
-// Setup
+//  Setup
 function initial() {
-  questionCount = 0;
+  questioncount = 0;
   count = 11;
-  clearTimeout(timerId);
+  quizCreator();
+  displayquiz(questioncount);
+  clearInterval(countdown);
   timerDisplay();
 }
 
-// if(q.option[i] === q.correct){
-
-// }
+window.onload = () => {
+  initial();
+};

@@ -13,16 +13,21 @@
   <body>
     <header>
       <div id="container-logo">
-        <img src="./b.week.gianni/assets/epicode_logo.png" alt="" />
+        <img src="/Assets/epicode_logo.png" alt="" />
         <div class="counter">
           <div class="outer">
             <div class="inner">
               <div class="timerDiv">
-                <p class="parag">Seconds</p>
-                <p class="timer"></p>
-                <p class="parag">remaining</p>
+                <p>SECONDS</p>
+                <span class="time-left">10</span>
+                <p>remaining</p>
               </div>
-              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                version="1.1"
+                width="160px"
+                height="160px"
+              >
                 <defs>
                   <linearGradient id="GradientColor">
                     <stop offset="0%" stop-color="#00FFFF" />
@@ -39,11 +44,13 @@
     <main>
       <div id="displayContainer">
         <div class="container">
+          <h1 class="question"></h1>
           <!-- domande e optioni qui -->
         </div>
         <div class="numberOfCount">
-          <span class="numberOfQuestion">QUestion 1/10</span>
+          <span class="numberOfQuestion"></span>
         </div>
+        <button id="nextbtn">next</button>
       </div>
     </main>
     <script src="./benchmark.js"></script>
