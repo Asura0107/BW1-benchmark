@@ -103,6 +103,9 @@ svg {
 .option-div:hover {
   background-color: #d20094;
 }
+button:active {
+  transform: scale(0.95);
+}
 
 #switch-container {
   color: white;
