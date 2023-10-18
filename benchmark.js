@@ -122,7 +122,7 @@ function quizCreator() {
     div.appendChild(question_DIV);
     container.appendChild(div);
     // options
-    for (let i = 0; i < q.answers.length; i++) {
+    for (let i = 0; i < q(0).answers.length; i++) {
       const btn = document.createElement("button");
       btn.classList.add("option-div");
       btn.innerHTML = q.answers[i];
