@@ -22,11 +22,14 @@ p {
     width: 200px;
 }
 /* MAIN */
-#questionContainer {
+#main {
+
+}
+.questionContainer {
     margin: 150px auto;
     text-align: center;
 }
-#buttonsArea {
+.buttonsArea {
     margin-top: 50px;
     }
     button {

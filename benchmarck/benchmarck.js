@@ -101,24 +101,62 @@ const questions = [
 
   window.onload = function () {
 
+    questionsContainer()
 };
 
-const question = () => {
-    const main = document.getElementsByTagName("main")
-    const div = document.createElement("div")
-  div = document.getElementsById("questionContainer")
+const questionsContainer = () => {
+  let main = document.getElementById("main")
   
-  const h1 = document.createElement("h1")
-  h1.innerText = "Domanda"
+  let questionarea = document.createElement("div")
+  questionarea.classList.add("questionContainer")
   
-  const div1 = document.createElement("div")
-  div1 = document.getElementsById("buttonsArea")
+  
+  let buttonsArea = document.createElement("div")
+  buttonsArea.classList.add("buttonsArea")
 
-  for (let i = 0; i < question[0].answers.length; i++) {
-    const button = document.createAttribute("button")
-    div1.appendChild(button)
-    div.appendChild(h1, div1)
+  for (let i = 0; i < questions[0].question[0].length; i++) {
+    let h1 = document.createElement("h1")
+    h1.innerText = questions[0].question
+    
+   
+    questionarea.appendChild(h1)
+  }
+  
+  for (let i = 0; i < questions[0].answers.length; i++) {
+    let button = document.createElement("button")
+    button.innerText = questions[0].answers[i]
+    
+    button.addEventListener("click", function() { 
+
+      // let questionarea = document.createElement("div")
+      // questionarea.classList.add("questionContainer")
+      
+      
+      // let buttonsArea = document.createElement("div")
+      // buttonsArea.classList.add("buttonsArea")
+    
+
+      for (let i = 0; i < questions[1].question[0].length; i++) {
+        
+        let h1 = document.createElement("h1")
+        h1.innerText = questions[1].question
+        
+        questionarea.appendChild(h1)
+      }
+       
+        
+        for (let i = 0; i < questions[1].answers.length; i++) {
+          let button = document.createElement("button")
+          button.innerText = questions[1].answers[i]
+          
+          buttonsArea.appendChild(button)
+        }
+    })
+
+  buttonsArea.appendChild(button)
 }
-main.appendChild(div)
+
+
+  main.appendChild(questionarea)
+  questionarea.appendChild(buttonsArea)
 }
-question()
