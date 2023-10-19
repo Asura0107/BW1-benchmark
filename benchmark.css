@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-image: url(./b.week.gianni/assets/bg.jpg);
 
@@ -25,15 +29,18 @@ main {
   height: 150px;
   width: 150px;
   border-radius: 50%;
-  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15), -6px -6px 10px -1px rgba(255, 255, 255, 0, 7);
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0, 7);
   padding: 20px;
 }
 .inner {
   height: 150px;
   border-radius: 50%;
   position: absolute;
-  box-shadow: inset 4px 4px 6px -1px (0, 0, 0, 0.2), inset -4px -4px 6px -1px rgba(0, 0, 0, 0.2),
-    -0.5px -0.5px 0px rgba(255, 255, 255, 1), 0.5px 0.5px 0px rgba(0, 0, 0, 15), 0px 12px 10px -10px rgb(0, 0, 0.05);
+  box-shadow: inset 4px 4px 6px -1px (0, 0, 0, 0.2),
+    inset -4px -4px 6px -1px rgba(0, 0, 0, 0.2),
+    -0.5px -0.5px 0px rgba(255, 255, 255, 1), 0.5px 0.5px 0px rgba(0, 0, 0, 15),
+    0px 12px 10px -10px rgb(0, 0, 0.05);
 }
 
 .inner .timerDiv {
@@ -103,7 +110,7 @@ svg {
 .option-div:hover {
   background-color: #d20094;
 }
-button:active {
+.option-div:active {
   transform: scale(0.95);
 }
 
@@ -125,10 +132,156 @@ button:active {
   display: none;
 }
 /* .option-div.active {
-  background-color: aquamarine;
-} */
+    background-color: aquamarine;
+  } */
 
 footer {
   text-align: center;
   color: white;
+}
+.selected {
+  background-color: #d20094;
+}
+
+/* css per result page */
+.result {
+  text-align: center;
+  color: whitesmoke;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+.circleContainer {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin: 80px 50px 0;
+}
+.outerresult {
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  padding: 20px;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+}
+.innerresult {
+  height: 260px;
+  width: 260px;
+  border-radius: 50%;
+  position: absolute;
+
+  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+    inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+    -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+    0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+}
+.circle1 {
+  fill: none;
+  stroke: url(#GradientColor);
+  stroke-width: 20px;
+  stroke-dasharray: 1100;
+  stroke-dashoffset: 1100;
+  animation: anima 2s linear forwards;
+}
+.circle2 {
+  fill: none;
+  stroke: #d20094;
+  stroke-width: 20px;
+  stroke-dasharray: 1100;
+  stroke-dashoffset: 1100;
+  animation: anime 2s linear forwards;
+}
+.correct {
+  text-align: left;
+}
+.perc {
+  font-size: 40px;
+  font-weight: 600;
+}
+.wrong + p {
+  text-align: right;
+}
+.fonth1 {
+  font-size: 60px;
+  font-weight: 700;
+}
+.footbtn {
+  text-align: center;
+  margin: 80px 0 40px;
+}
+#rateus {
+  border: 2px solid white;
+  background-color: #90008026;
+  font-size: 20x;
+
+  padding: 10px 50px;
+  cursor: pointer;
+}
+.svgResult {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#numberresult {
+  position: absolute;
+  text-align: center;
+  top: 50px;
+  left: 5px;
+  padding: 10px 10px;
+}
+#numberresult span {
+  color: #00ffff;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.titleresult {
+  margin-bottom: 70px;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+section {
+  display: inline-block;
+  vertical-align: -webkit-baseline-middle;
+  justify-content: space-evenly;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Outfit", sans-serif;
+}
+h4 {
+  font-size: 16px;
+  font-weight: 700;
+}
+h2,
+h3 {
+  font-weight: 400;
+}
+h2 {
+  font-size: 40px;
+}
+h3 {
+  font-size: 25px;
+}
+
+button {
+  border: 2px solid white;
+  background-color: #90008026;
+  font-size: 20x;
+
+  padding: 10px 50px;
+  cursor: pointer;
+}
+@keyframes anime {
+  100% {
+    stroke-dashoffset: 200;
+  }
+}
+@keyframes anima {
+  100% {
+    stroke-dashoffset: 500;
+  }
 }
