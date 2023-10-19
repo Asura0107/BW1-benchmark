@@ -31,15 +31,18 @@ main {
   height: 150px;
   width: 150px;
   border-radius: 50%;
-  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15), -6px -6px 10px -1px rgba(255, 255, 255, 0, 7);
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0, 7);
   padding: 20px;
 }
 .inner {
   height: 150px;
   border-radius: 50%;
   position: absolute;
-  box-shadow: inset 4px 4px 6px -1px (0, 0, 0, 0.2), inset -4px -4px 6px -1px rgba(0, 0, 0, 0.2),
-    -0.5px -0.5px 0px rgba(255, 255, 255, 1), 0.5px 0.5px 0px rgba(0, 0, 0, 15), 0px 12px 10px -10px rgb(0, 0, 0.05);
+  box-shadow: inset 4px 4px 6px -1px (0, 0, 0, 0.2),
+    inset -4px -4px 6px -1px rgba(0, 0, 0, 0.2),
+    -0.5px -0.5px 0px rgba(255, 255, 255, 1), 0.5px 0.5px 0px rgba(0, 0, 0, 15),
+    0px 12px 10px -10px rgb(0, 0, 0.05);
 }
 
 .inner .timerDiv {
@@ -65,7 +68,7 @@ circle {
   stroke-width: 20px;
   stroke-dasharray: 472;
   stroke-dashoffset: 472;
-  animation: anim 21s linear forwards;
+  animation: anim 33s linear forwards;
 }
 svg {
   top: 0;
@@ -109,8 +112,6 @@ svg {
   font-family: inter, sans-serif;
   font-weight: 600;
   display: inline-block;
-  margin-left: 80px;
-  margin-right: 80px;
 }
 .option-div:hover {
   background-color: #d20094;
@@ -129,17 +130,10 @@ svg {
 #switch-container span {
   color: #bc008b;
 }
-#nextbtn {
-  margin-top: 25px;
-  font-family: inter, sans-serif;
-  font-weight: 500;
+.nextbtn {
+  width: 30px;
 }
-#nextbtn:hover {
-  background-color: #d20094;
-}
-#nextbtn:active {
-  transform: scale(0.95);
-}
+
 .hide {
   display: none;
 }
@@ -174,7 +168,8 @@ footer {
   width: 300px;
   border-radius: 50%;
   padding: 20px;
-  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15), -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
 }
 .innerresult {
   height: 260px;
@@ -182,9 +177,10 @@ footer {
   border-radius: 50%;
   position: absolute;
 
-  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2), inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
-    -0.5px -0.5px 0px rgba(255, 255, 255, 1), 0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
-    0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+    inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+    -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+    0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);
 }
 .circle1 {
   fill: none;
