@@ -104,7 +104,9 @@ const nextbtn = document.getElementById("nextbtn");
 const result = document.querySelector(".result");
 const percCorrect = document.querySelector(".percCorrect");
 const percWrong = document.querySelector(".percWrong");
-
+const correctAnswer = document.querySelector(".correctAnswer");
+const wrongAnswer = document.querySelector(".wrongAnswer");
+const dissapear = document.querySelector(".counter");
 let questioncount;
 let scoreCount;
 
@@ -133,12 +135,13 @@ nextbtn.addEventListener(
     if (questioncount == questions.length) {
       displayContainer.classList.add("hide");
       numberOfQuestion.classList.add("hide");
-      //   header.classList.add("hide");
-      //   timepoof.classList.add("hide");
+      dissapear.classList.add("hide");
 
       result.classList.remove("hide");
       percCorrect.innerText = scoreCount * 10 + "%";
       percWrong.innerText = (10 - scoreCount) * 10 + "%";
+      correctAnswer.innerText = scoreCount + "/10 questions";
+      wrongAnswer.innerText = 10 - scoreCount + "/10 questions";
     } else {
       displayquiz(questioncount);
       //   timerId();
