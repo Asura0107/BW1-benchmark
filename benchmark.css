@@ -16,7 +16,7 @@ main {
 }
 #container-logo img {
   width: 200px;
-  padding-left: 50px;
+    padding-left: 50px;
 }
 
 #container-logo .counter {

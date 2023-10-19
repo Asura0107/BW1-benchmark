@@ -2,9 +2,9 @@
 body {
     background-image: url(./Assets/bg.jpg);
     background-size: cover;
-margin: 50px 200px 100px ;
-background-repeat: no-repeat;
     height: 100%;
+    background-repeat: no-repeat;
+    margin: 50px;
 }
 /* header */
 header {
@@ -12,6 +12,7 @@ header {
 }
 #epicode-logo {
     width: 200px;
+    padding-left: 50px;
 }
 #epicode-container {
     
