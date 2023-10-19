@@ -197,7 +197,8 @@ footer {
 .correct {
   text-align: left;
 }
-.perc {
+.percCorrect,
+.percWrong {
   font-size: 40px;
   font-weight: 600;
 }
