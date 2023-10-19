@@ -4,11 +4,11 @@
 
 body {
   background-image: url(./b.week.gianni/assets/bg.jpg);
-
   background-size: cover;
   height: 100%;
   background-repeat: no-repeat;
   margin: 50px;
+  font-family: inter, sans-serif;
 }
 main {
   text-align: center;
@@ -16,7 +16,7 @@ main {
 }
 #container-logo img {
   width: 200px;
-    padding-left: 50px;
+  padding-left: 50px;
 }
 
 #container-logo .counter {
@@ -29,18 +29,15 @@ main {
   height: 150px;
   width: 150px;
   border-radius: 50%;
-  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
-    -6px -6px 10px -1px rgba(255, 255, 255, 0, 7);
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15), -6px -6px 10px -1px rgba(255, 255, 255, 0, 7);
   padding: 20px;
 }
 .inner {
   height: 150px;
   border-radius: 50%;
   position: absolute;
-  box-shadow: inset 4px 4px 6px -1px (0, 0, 0, 0.2),
-    inset -4px -4px 6px -1px rgba(0, 0, 0, 0.2),
-    -0.5px -0.5px 0px rgba(255, 255, 255, 1), 0.5px 0.5px 0px rgba(0, 0, 0, 15),
-    0px 12px 10px -10px rgb(0, 0, 0.05);
+  box-shadow: inset 4px 4px 6px -1px (0, 0, 0, 0.2), inset -4px -4px 6px -1px rgba(0, 0, 0, 0.2),
+    -0.5px -0.5px 0px rgba(255, 255, 255, 1), 0.5px 0.5px 0px rgba(0, 0, 0, 15), 0px 12px 10px -10px rgb(0, 0, 0.05);
 }
 
 .inner .timerDiv {
@@ -102,9 +99,12 @@ svg {
   margin: 10px;
   padding: 15px 25px 15px 25px;
   color: white;
-  background-color: #2c2956;
-  border: 2px transparent white;
+  background-color: transparent;
+  border: 2px transparent rgba(255, 255, 255, 0.715);
+  border-bottom: outset;
   font-size: 1rem;
+  font-family: inter, sans-serif;
+  font-weight: 600;
   display: inline-block;
 }
 .option-div:hover {
@@ -124,8 +124,28 @@ svg {
 #switch-container span {
   color: #bc008b;
 }
-.nextbtn {
-  width: 30px;
+#nextbtn {
+  width: 100px;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  border-radius: 25px;
+  margin: 10px;
+  padding: 15px 25px 15px 25px;
+  color: white;
+  background-color: #2c295600;
+  border: 2px transparent white;
+  border-style: outset;
+  font-size: 1rem;
+  font-family: inter, sans-serif;
+  font-weight: 600;
+  display: inline-block;
+}
+#nextbtn:hover {
+  background-color: #d20094;
+}
+#nextbtn:active {
+  transform: scale(0.95);
 }
 
 .hide {
@@ -161,8 +181,7 @@ footer {
   width: 300px;
   border-radius: 50%;
   padding: 20px;
-  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
-    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15), -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
 }
 .innerresult {
   height: 260px;
@@ -170,10 +189,9 @@ footer {
   border-radius: 50%;
   position: absolute;
 
-  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
-    inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
-    -0.5px -0.5px 0px rgba(255, 255, 255, 1),
-    0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2), inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+    -0.5px -0.5px 0px rgba(255, 255, 255, 1), 0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+    0px 12px 10px -10px rgba(0, 0, 0, 0.05);
 }
 .circle1 {
   fill: none;
@@ -268,12 +286,15 @@ h3 {
 }
 
 button {
-  border: 2px solid white;
+  border: 3px solid white;
   background-color: #90008026;
-  font-size: 20x;
-
-  padding: 10px 50px;
+  box-shadow: 10px 10px 30px #7d06c2ac;
+  padding: 20px 40px;
   cursor: pointer;
+  background-color: #2c295600;
+  font-family: inter, sans-serif;
+  font-weight: bold;
+  font-size: 25px;
 }
 @keyframes anime {
   100% {
