@@ -126,6 +126,7 @@ svg {
 }
 .nextbtn {
   width: 30px;
+ 
 }
 
 .hide {
@@ -269,9 +270,9 @@ h3 {
 
 button {
   border: 2px solid white;
-  background-color: #90008026;
+  background-color: rgba(0, 0, 0, 0);
   font-size: 20x;
-
+color: white;
   padding: 10px 50px;
   cursor: pointer;
 }
