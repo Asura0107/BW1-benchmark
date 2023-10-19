@@ -104,42 +104,47 @@ let displayContainer = document.getElementById("displayContainer");
 const nextbtn = document.getElementById("nextbtn");
 const result = document.querySelector(".result");
 const timepoof = document.querySelector("counter");
+// const header = document.getElementsByTagName("header");
 // const footer = document.getElementsByTagName("footer");
 let questioncount;
-let scoreCount = 0;
-// let count = 11;
-// let countdown;
+let scoreCount;
 
-let count = 30;
+// timer
+let count = 3;
 let timerId = setInterval(countdown, 1000);
 function countdown() {
   const timeLeft = document.querySelector(".timer");
-  if (count == 0) {
-    clearTimeout(timerId);
-    displayNext();
+  if (count === 0) {
+    displaynext();
+    clearInterval(timerId);
   } else {
     timeLeft.innerHTML = count + "s";
     count--;
   }
 }
 
+// setTimeout(() => {
+//   displayNext();
+// }, 30000);
+
 // next function
 nextbtn.addEventListener(
   "click",
   (displaynext = () => {
     questioncount += 1;
+
     // se ultima domanda
+
     if (questioncount == questions.length) {
       displayContainer.classList.add("hide");
       numberOfQuestion.classList.add("hide");
+      //   header.classList.add("hide");
       //   timepoof.classList.add("hide");
 
       result.classList.remove("hide");
-
-      foot;
     } else {
       displayquiz(questioncount);
-
+      //   timerId();
       numberOfQuestion.innerHTML =
         questioncount + 1 + " of " + questions.length + " Question";
     }
@@ -174,7 +179,7 @@ function quizCreator() {
     let question_DIV = document.createElement("h1");
     question_DIV.classList.add("question");
     question_DIV.innerHTML = q.question;
-    // div.appendChild(question_DIV);
+
     div.appendChild(question_DIV);
     // options
     for (let i = 0; i < q.answers.length; i++) {
@@ -182,10 +187,15 @@ function quizCreator() {
       btn.classList.add("option-div");
       btn.innerHTML = q.answers[i];
       div.appendChild(btn);
+
       btn.onclick = function (e) {
         notselected();
+        // la keyword this sta ad indicare l'elemento che si sta selezionando
+        check(this);
+
         e.currentTarget.classList.add("selected");
       };
+      //   btn.disabled = true;
       //   btn.addEventListener("click", check());
     }
     container.appendChild(div);
@@ -200,6 +210,19 @@ const notselected = () => {
 };
 
 // checker function to check if option is correct or not
+const check = function (selected) {
+  const solution = selected.innerText;
+  const correctanswer = questions[questioncount].correct_answer;
+  if (solution === correctanswer) {
+    scoreCount += 10;
+    console.log("true");
+  } else {
+    console.log("false");
+  }
+  console.log(scoreCount);
+  clearInterval(countdown);
+};
+
 // function check(userOption) {
 //   let userSolution = userOption.innerText;
 //   let question =
@@ -224,11 +247,12 @@ const notselected = () => {
 //  Setup
 function initial() {
   questioncount = 0;
-  count = 30;
+  count = 31;
+  scoreCount = 0;
   quizCreator();
   displayquiz(questioncount);
   clearInterval(countdown);
-  timerDisplay();
+  //   timerDisplay();
 }
 
 window.onload = () => {
