@@ -18,8 +18,10 @@ main {
   width: 200px;
   padding-left: 50px;
 }
-
-#container-logo .counter {
+#container-logo {
+  display: inline-block;
+}
+.counter {
   display: inline;
   float: right;
   padding-right: 100px;
@@ -199,7 +201,8 @@ footer {
 .correct {
   text-align: center;
 }
-.correct h2,p {
+.correct h2,
+p {
   margin: 30px;
 }
 .percCorrect,
@@ -208,12 +211,11 @@ footer {
   font-weight: 600;
 }
 
-
-.wrong h2,p {
+.wrong h2,
+p {
   margin: 0;
 }
 .wrong + p {
- 
 }
 .fonth1 {
   font-size: 60px;
