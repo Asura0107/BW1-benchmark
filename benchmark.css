@@ -147,6 +147,7 @@ footer {
 }
 
 /* css per result page */
+
 .result {
   text-align: center;
   color: whitesmoke;
@@ -195,15 +196,23 @@ footer {
   animation: anime 2s linear forwards;
 }
 .correct {
-  text-align: left;
+  text-align: center;
+}
+.correct h2,p {
+  margin: 30px;
 }
 .percCorrect,
 .percWrong {
   font-size: 40px;
   font-weight: 600;
 }
+
+
+.wrong h2,p {
+  margin: 0;
+}
 .wrong + p {
-  text-align: right;
+ 
 }
 .fonth1 {
   font-size: 60px;
@@ -232,6 +241,9 @@ footer {
   top: 50px;
   left: 5px;
   padding: 10px 10px;
+}
+#numberresult h4 {
+  margin: 0 0 10px;
 }
 #numberresult span {
   color: #00ffff;
