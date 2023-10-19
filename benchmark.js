@@ -96,16 +96,15 @@ const questions = [
   }
 ];
 
-// let timeLeft = document.getElementsByClassName("time-left");
 let timerDiv = document.getElementsByClassName("timerDiv");
 const container = document.querySelector(".container");
 let numberOfQuestion = document.querySelector(".numberOfQuestion");
 let displayContainer = document.getElementById("displayContainer");
 const nextbtn = document.getElementById("nextbtn");
 const result = document.querySelector(".result");
-const timepoof = document.querySelector("counter");
-// const header = document.getElementsByTagName("header");
-// const footer = document.getElementsByTagName("footer");
+const percCorrect = document.querySelector(".percCorrect");
+const percWrong = document.querySelector(".percWrong");
+
 let questioncount;
 let scoreCount;
 
@@ -123,10 +122,6 @@ function countdown() {
   }
 }
 
-// setTimeout(() => {
-//   displayNext();
-// }, 30000);
-
 // next function
 nextbtn.addEventListener(
   "click",
@@ -142,6 +137,8 @@ nextbtn.addEventListener(
       //   timepoof.classList.add("hide");
 
       result.classList.remove("hide");
+      percCorrect.innerText = scoreCount * 10 + "%";
+      percWrong.innerText = (10 - scoreCount) * 10 + "%";
     } else {
       displayquiz(questioncount);
       //   timerId();
@@ -153,7 +150,7 @@ nextbtn.addEventListener(
 
 // displayquiz
 const displayquiz = (questioncount) => {
-  let quizcards = document.querySelectorAll(".container-mid");
+  let quizcards = document.querySelectorAll(".containerquestion");
   //hide other
   quizcards.forEach((card) => {
     card.classList.add("hide");
@@ -170,7 +167,7 @@ function quizCreator() {
     // q.options.sort(() => Math.random() - 0.5);
     // quiz card creation
     let div = document.createElement("div");
-    div.classList.add("container-mid", "hide");
+    div.classList.add("containerquestion", "hide");
     // question number
     numberOfQuestion.innerHTML =
       questioncount + 1 + " of " + questions.length + " Question";
@@ -190,7 +187,7 @@ function quizCreator() {
 
       btn.onclick = function (e) {
         notselected();
-        // la keyword this sta ad indicare l'elemento che si sta selezionando
+        // la keyword this sta ad indicare l'elemento che si sta selezionando , in questo caso il btn selezionato
         check(this);
 
         e.currentTarget.classList.add("selected");
@@ -213,36 +210,24 @@ const notselected = () => {
 const check = function (selected) {
   const solution = selected.innerText;
   const correctanswer = questions[questioncount].correct_answer;
+  //   mi vado a prendere ogni singola domanda
+  let question =
+    document.getElementsByClassName("containerquestion")[questioncount];
+  // all'interno di ogni domanda mi prendo tutte le risposte
+  let others = question.querySelectorAll(".option-div");
+
   if (solution === correctanswer) {
-    scoreCount += 10;
+    scoreCount += 1;
     console.log("true");
   } else {
     console.log("false");
   }
   console.log(scoreCount);
   clearInterval(countdown);
+  others.forEach((item) => {
+    item.disabled = true;
+  });
 };
-
-// function check(userOption) {
-//   let userSolution = userOption.innerText;
-//   let question =
-//     document.getElementsByClassName("container-mid")[questionCount];
-//   let options = question.querySelectorAll(".option-div");
-
-//   // if user clicked answer == correct option stored in object
-//   if (userSolution === questions[questionCount].correct) {
-//     userOption.classList.add("correct");
-//     scoreCount++;
-//   } else {
-//     userOption.classList.add("incorrect");
-//     // for making the correct option
-//     options.forEach((element) => {
-//       if (element.innerText == questions[questionCount].correct) {
-//         element.classList.add("correct");
-//       }
-//     });
-//   }
-// }
 
 //  Setup
 function initial() {
