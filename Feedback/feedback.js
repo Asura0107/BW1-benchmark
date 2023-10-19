@@ -1,21 +1,15 @@
-// Star Input
-const section = document.querySelectorAll("section")[0]
-const starForLoop = () => {
-    for (let i = 0; i < 10; i++) {
-        let starContainer = document.createElement("div")
-        starContainer.classList.add("stella-container")
-      
-        
-      
-        // starContainer.addEventListener('mouseover', () => {
-        //     starContainer.classList.add("stella-clicked")
-        // })
-        
-        section.appendChild(starContainer)
-}
+const stars = document.querySelectorAll (".stars svg");
 
-}
-starForLoop();
+stars.forEach((item, index1) => {
+    item.addEventListener("click", () => {
+        stars.forEach((star, index2) => {
+            index1 >= index2 ? star.classList.add("active") : star.classList.remove("active")
+        })
+    })
+});
+
+
+
 
 
 

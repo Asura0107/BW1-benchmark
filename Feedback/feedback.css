@@ -85,26 +85,15 @@ display: block;
         font-family: 'Outfit', sans-serif;
         font-weight: 700;
     }
-    .stella-container {
-  background-image: url(./star.svg);
-  width: 47px ;
-  display: inline-block;
-  height: 46px; 
-  padding: 5px;
-  margin-top: 10px;
-  background-repeat: no-repeat;
-};
-    .stella-clicked {
-  background-image: url(./star1.svg);
-  width: 47px ;
-  display: inline-block;
-  height: 46px; 
-  padding: 5px;
-  margin-top: 10px;
-  background-repeat: no-repeat;
-};
-  
-  
-  
+    .stars svg {
+        padding: 20px 10px;
+     
+    
+    }
+    .stars svg.active {
+    fill: #F0F8FF;
+    }
+    
+
   
   
