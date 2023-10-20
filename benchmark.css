@@ -44,7 +44,7 @@ main {
     -0.5px -0.5px 0px rgba(255, 255, 255, 1), 0.5px 0.5px 0px rgba(0, 0, 0, 15),
     0px 12px 10px -10px rgb(0, 0, 0.05);
 }
-.inner { 
+.inner {
   text-align: center;
 }
 
@@ -52,7 +52,6 @@ main {
   color: white;
   position: absolute;
 
- 
   left: 35px;
   top: 20px;
   font-size: 15px;
@@ -99,16 +98,14 @@ svg {
   margin-top: 225px;
   font-weight: 700;
 }
-.containerquestion {
-  
-}
+
 .option-div {
   width: 250px;
   text-align: center;
   outline: none;
   cursor: pointer;
   border-radius: 25px;
- width: 400px;
+  width: 400px;
   padding: 15px 25px 15px 25px;
   color: white;
   background-color: transparent;
@@ -118,7 +115,7 @@ svg {
   font-family: inter, sans-serif;
   font-weight: 600;
   display: inline-block;
- margin: 20px 60px;
+  margin: 20px 60px;
 }
 .option-div:hover {
   background-color: #d20094;
@@ -157,12 +154,8 @@ footer {
 }
 
 /* css per result page */
-main {
-  
-}
 
 .result {
-
   color: whitesmoke;
   font-family: "Inter", sans-serif;
   font-size: 16px;
@@ -172,8 +165,6 @@ main {
   height: 300px;
   position: relative;
   margin: 80px 50px 0;
-
-  
 }
 .outerresult {
   height: 300px;
@@ -236,7 +227,7 @@ p {
   font-weight: 700;
 }
 .footbtn {
-  text-align: center;
+  /* text-align: center; */
   margin: 80px 0 40px;
 }
 #rateus {
@@ -278,7 +269,6 @@ a {
 section {
   display: inline-block;
   vertical-align: -webkit-baseline-middle;
-  
 }
 h1,
 h2,
@@ -323,3 +313,20 @@ button {
     stroke-dashoffset: 500;
   }
 } */
+#nextbtn,
+.numberOfCount {
+  display: inline-block;
+  vertical-align: baseline;
+}
+#nextbtn {
+  float: right;
+}
+#nextbtn:hover {
+  background-color: #d20094;
+}
+#nextbtn:active {
+  transform: scale(0.95);
+}
+.numberOfCount {
+  text-align: center;
+}

@@ -136,7 +136,7 @@ nextbtn.addEventListener(
       displayContainer.classList.add("hide");
       numberOfQuestion.classList.add("hide");
       dissapear.classList.add("hide");
-
+      nextbtn.classList.add("hide");
       result.classList.remove("hide");
       percCorrect.innerText = scoreCount * 10 + "%";
       percWrong.innerText = (10 - scoreCount) * 10 + "%";
@@ -154,7 +154,7 @@ nextbtn.addEventListener(
       // devo fare ricominciare la funzione del timer, quindi mi la vado a richiamare e ad attivare.
       count = 30;
       clearInterval(countdown);
-      timerId();
+      timerId;
     }
   })
 );
