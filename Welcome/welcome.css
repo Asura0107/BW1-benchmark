@@ -57,13 +57,17 @@ li {
 #buttons-area {
   margin-top: 100px;
 }
-#buttons-area button:nth-child(1) {
+
+#check {
+  transform: scale(1.5);
+}
+/* #buttons-area button:nth-child(1) {
   background-color: #0c113b;
   height: 16px;
   border-style: solid;
   border-color: white;
-  border-width: 2px;
-}
+  border-width: 2px; */
+/* } */
 #proceed-button {
   background-color: #00ffff;
   padding: 10px 50px;
