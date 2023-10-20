@@ -5,7 +5,12 @@ const questions = [
     difficulty: "easy",
     question: "What does CPU stand for?",
     correct_answer: "Central Processing Unit",
-    answers: ["Central Processing Unit", "Central Process Unit", "Computer Personal Unit", "Central Processor Unit"]
+    answers: [
+      "Central Processing Unit",
+      "Central Process Unit",
+      "Computer Personal Unit",
+      "Central Processor Unit"
+    ]
   },
   {
     category: "Science: Computers",
@@ -28,7 +33,8 @@ const questions = [
     category: "Science: Computers",
     type: "boolean",
     difficulty: "easy",
-    question: "Pointers were not used in the original C programming language; they were added later on in C++.",
+    question:
+      "Pointers were not used in the original C programming language; they were added later on in C++.",
     correct_answer: "False",
     answers: ["False", "True"]
   },
@@ -36,7 +42,8 @@ const questions = [
     category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
-    question: "What is the most preferred image format used for logos in the Wikimedia database?",
+    question:
+      "What is the most preferred image format used for logos in the Wikimedia database?",
     correct_answer: ".svg",
     answers: [".svg", ".png", ".jpeg", ".gif"]
   },
@@ -46,13 +53,19 @@ const questions = [
     difficulty: "easy",
     question: "In web design, what does CSS stand for?",
     correct_answer: "Cascading Style Sheet",
-    answers: ["Cascading Style Sheet", "Counter Strike: Source", "Corrective Style Sheet", "Computer Style Sheet"]
+    answers: [
+      "Cascading Style Sheet",
+      "Counter Strike: Source",
+      "Corrective Style Sheet",
+      "Computer Style Sheet"
+    ]
   },
   {
     category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
-    question: "What is the code name for the mobile operating system Android 7.0?",
+    question:
+      "What is the code name for the mobile operating system Android 7.0?",
     correct_answer: "Nougat",
     answers: ["Nougat", "Ice Cream Sandwich", "Jelly Bean", "Marshmallow"]
   },
@@ -76,7 +89,8 @@ const questions = [
     category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
-    question: "Which programming language shares its name with an island in Indonesia?",
+    question:
+      "Which programming language shares its name with an island in Indonesia?",
     correct_answer: "Java",
     answers: ["Java", "Python", "C", "Jakarta"]
   }
@@ -101,12 +115,11 @@ let count = 3;
 let timerId = setInterval(countdown, 1000);
 function countdown() {
   const timeLeft = document.querySelector(".timer");
+  timeLeft.innerHTML = count;
+  count--;
   if (count === 0) {
+    clearInterval(countdown);
     displaynext();
-    clearInterval(timerId);
-  } else {
-    timeLeft.innerHTML = count + "s";
-    count--;
   }
 }
 
@@ -128,14 +141,20 @@ nextbtn.addEventListener(
       percWrong.innerText = (10 - scoreCount) * 10 + "%";
       correctAnswer.innerText = scoreCount + "/10 questions";
       wrongAnswer.innerText = 10 - scoreCount + "/10 questions";
+      progress();
     } else {
       displayquiz(questioncount);
-      //   timerId();
-      numberOfQuestion.innerHTML = questioncount + 1 + " of " + questions.length + " Question";
+
+      numberOfQuestion.innerHTML =
+        questioncount + 1 + " of " + questions.length + " Question";
+      // per fare ricominciare il timer ad ogni click del pulsante next
+      // bisogna fare ricominciare il timer dandogli un tempo , quindi tre secondi, e togliendo il tempo precedente
+      // cioè usando clearinterval. Dopo avergli azzerato il tempo precedente e avergli un dato un altro limite (i trenta secondi)
+      // devo fare ricominciare la funzione del timer, quindi mi la vado a richiamare e ad attivare.
+      count = 30;
+      clearInterval(countdown);
+      timerId();
     }
-    count = 5;
-    displayNext();
-    clearInterval(timerId);
   })
 );
 
@@ -160,7 +179,8 @@ function quizCreator() {
     let div = document.createElement("div");
     div.classList.add("containerquestion", "hide");
     // question number
-    numberOfQuestion.innerHTML = questioncount + 1 + " of " + questions.length + " Question";
+    numberOfQuestion.innerHTML =
+      questioncount + 1 + " of " + questions.length + " Question";
     // question
 
     let question_DIV = document.createElement("h1");
@@ -201,7 +221,8 @@ const check = function (selected) {
   const solution = selected.innerText;
   const correctanswer = questions[questioncount].correct_answer;
   //   mi vado a prendere ogni singola domanda
-  let question = document.getElementsByClassName("containerquestion")[questioncount];
+  let question =
+    document.getElementsByClassName("containerquestion")[questioncount];
   // all'interno di ogni domanda mi prendo tutte le risposte
   let others = question.querySelectorAll(".option-div");
 
@@ -221,7 +242,7 @@ const check = function (selected) {
 //  Setup
 function initial() {
   questioncount = 0;
-  count = 5;
+  count = 30;
   scoreCount = 0;
   quizCreator();
   displayquiz(questioncount);
@@ -232,3 +253,19 @@ function initial() {
 window.onload = () => {
   initial();
 };
+
+// dato che non si può riportare il keyframe dal js, si va a creare una funzione che mi faccia aumentare la barra a seconda della percentuale delle risposte corrette
+
+const progress = function () {
+  // prima di tutto si va a trovare la percentuale delle risposte corrette
+  const percentageCorrect = (scoreCount / questions.length) * 100;
+  const circleLength = 912; // lunghezza totale del cerchio
+  //   valore della stroke in base alla percentuale
+  const strokeDashOffsetValue =
+    circleLength - (circleLength * percentageCorrect) / 100;
+  // vado a prendermi la classe del cerchio la cui stroke aumenta
+  const progressBar = document.querySelector(".js-progressbar");
+  //   e ci attribuisco il valore trovato in precedenza
+  progressBar.style.strokeDashoffset = strokeDashOffsetValue;
+};
+// il tutto viene messo all'interno del nextbtn così va araccogliere i dati volta per volta

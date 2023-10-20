@@ -62,13 +62,13 @@ main {
   font-weight: 600;
 }
 
-circle {
+.circlefirst {
   fill: none;
   stroke: url(#GradientColor);
   stroke-width: 20px;
   stroke-dasharray: 472;
   stroke-dashoffset: 472;
-  animation: anim 33s linear forwards;
+  animation: anim 30s linear forwards;
 }
 svg {
   top: 0;
@@ -186,8 +186,8 @@ footer {
   fill: none;
   stroke: url(#GradientColorresult);
   stroke-width: 20px;
-  stroke-dasharray: 1100;
-  stroke-dashoffset: 1100;
+  stroke-dasharray: 912;
+  stroke-dashoffset: 912;
   animation: anima 2s linear forwards;
 }
 .circle2 {
@@ -196,7 +196,7 @@ footer {
   stroke-width: 20px;
   stroke-dasharray: 1100;
   stroke-dashoffset: 1100;
-  animation: anime 2s linear forwards;
+  animation: anime linear forwards;
 }
 .correct {
   text-align: center;
@@ -215,8 +215,7 @@ p {
 p {
   margin: 0;
 }
-.wrong + p {
-}
+
 .fonth1 {
   font-size: 60px;
   font-weight: 700;
@@ -303,8 +302,8 @@ button {
     stroke-dashoffset: 200;
   }
 }
-@keyframes anima {
+/* @keyframes anima {
   100% {
     stroke-dashoffset: 500;
   }
-}
+} */
