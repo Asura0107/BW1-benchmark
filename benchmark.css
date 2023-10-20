@@ -151,9 +151,12 @@ footer {
 }
 
 /* css per result page */
+main {
+  
+}
 
 .result {
-  text-align: center;
+
   color: whitesmoke;
   font-family: "Inter", sans-serif;
   font-size: 16px;
@@ -163,6 +166,8 @@ footer {
   height: 300px;
   position: relative;
   margin: 80px 50px 0;
+
+  
 }
 .outerresult {
   height: 300px;
@@ -201,20 +206,23 @@ footer {
 }
 .correct {
   text-align: center;
+  margin: 0;
 }
 .correct h2,
 p {
-  margin: 30px;
+  margin: 10px;
 }
 .percCorrect,
 .percWrong {
   font-size: 40px;
   font-weight: 600;
 }
-
-.wrong h2,
+.Wrong {
+  left: 40px;
+}
+.Wrong h2,
 p {
-  margin: 0;
+  margin: 10px;
 }
 
 .fonth1 {
@@ -237,6 +245,7 @@ p {
   position: absolute;
   top: 0;
   left: 0;
+  top: -100px;
 }
 #numberresult {
   position: absolute;
@@ -263,7 +272,7 @@ a {
 section {
   display: inline-block;
   vertical-align: -webkit-baseline-middle;
-  justify-content: space-evenly;
+  
 }
 h1,
 h2,
