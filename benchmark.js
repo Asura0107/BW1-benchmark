@@ -200,11 +200,11 @@ function quizCreator() {
       div.appendChild(btn);
 
       btn.onclick = function (e) {
-        notselected();
+        // notselected();
         // la keyword this sta ad indicare l'elemento che si sta selezionando , in questo caso il btn selezionato
         check(this);
 
-        e.currentTarget.classList.add("selected");
+        // e.currentTarget.classList.add("selected");
       };
       //   btn.disabled = true;
       //   btn.addEventListener("click", check());
@@ -213,12 +213,12 @@ function quizCreator() {
   }
 }
 
-const notselected = () => {
-  const previouslyselected = document.querySelector(".selected");
-  if (previouslyselected) {
-    previouslyselected.classList.remove("selected");
-  }
-};
+// const notselected = () => {
+//   const previouslyselected = document.querySelector(".selected");
+//   if (previouslyselected) {
+//     previouslyselected.classList.remove("selected");
+//   }
+// };
 
 // checker function to check if option is correct or not
 const check = function (selected) {
@@ -233,8 +233,10 @@ const check = function (selected) {
   if (solution === correctanswer) {
     scoreCount += 1;
     console.log("true");
+    selected.classList.add("good");
   } else {
     console.log("false");
+    selected.classList.add("notgood");
   }
   console.log(scoreCount);
   clearInterval(countdown);
