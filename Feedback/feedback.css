@@ -99,6 +99,9 @@ display: block;
     .stars svg.active {
     fill: #00FFFF;
     }
+    a { 
+        text-decoration: none;
+    }
     
 
   
