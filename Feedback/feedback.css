@@ -50,11 +50,12 @@ p {
     }
     /* input area */
     ::placeholder {
-       color: white;
+       color: grey;
      opacity: 1;
      font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 20px;
+    outline: none;
       }
       
       ::-ms-input-placeholder { 
@@ -69,6 +70,7 @@ p {
       width: 100%;
       background-color: rgba(0, 0, 0, 0);
     border-style: none;
+    color: white;
         }
     #text-container {
         border-bottom: solid   #900080;
@@ -91,7 +93,7 @@ display: block;
     }
     .stars svg {
         padding: 20px 10px;
-     
+     fill: #00106f;
     
     }
     .stars svg.active {
