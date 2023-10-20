@@ -116,6 +116,7 @@ svg {
   font-family: inter, sans-serif;
   font-weight: 600;
   display: inline-block;
+  margin: 20px 100px;
 }
 .option-div:hover {
   background-color: #d20094;
