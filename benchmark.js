@@ -150,7 +150,7 @@ nextbtn.addEventListener(
       displayquiz(questioncount);
 
       numberOfQuestion2.innerHTML =
-        "Question " + (questioncount + 1);
+        "QUESTION " + (questioncount + 1);
       // per fare ricominciare il timer ad ogni click del pulsante next
       // bisogna fare ricominciare il timer dandogli un tempo , quindi tre secondi, e togliendo il tempo precedente
       // cioè usando clearinterval. Dopo avergli azzerato il tempo precedente e avergli un dato un altro limite (i trenta secondi)
@@ -184,7 +184,7 @@ function quizCreator() {
     div.classList.add("containerquestion", "hide");
     // question number
     numberOfQuestion2.innerHTML =
-    "Question " + (questioncount + 1);
+    "QUESTION " + (questioncount + 1);
     // question
 
     let question_DIV = document.createElement("h1");
