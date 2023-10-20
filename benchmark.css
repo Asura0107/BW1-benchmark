@@ -144,8 +144,13 @@ svg {
 /* .option-div.active {
     background-color: aquamarine;
   } */
-
+  
+  .numberOfCount {
+   padding-left: 130px;
+    text-align: center;
+  }
 footer {
+  margin: 0 auto;
   text-align: center;
   color: white;
 }
@@ -188,7 +193,7 @@ footer {
 .circle1 {
   fill: none;
   stroke: url(#GradientColorresult);
-  stroke-width: 20px;
+  stroke-width: 80px;
   stroke-dasharray: 912;
   stroke-dashoffset: 912;
   animation: anima 2s linear forwards;
