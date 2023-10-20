@@ -69,17 +69,25 @@ main {
   stroke-dashoffset: 472;
   animation: anim linear forwards;
 }
+.circlesecond {
+  stroke: #faf3fa26;
+  stroke-width: 20px;
+  stroke-dasharray: 472;
+  stroke-dashoffset: 472;
+  fill: none;
+  animation: innerc linear forwards;
+}
 svg {
   top: 0;
   left: 0;
   transform: rotate(-90deg);
 }
 
-/* @keyframes anim {
+@keyframes innerc {
   100% {
     stroke-dashoffset: 0;
   }
-} */
+}
 
 #countdown {
   color: white;
