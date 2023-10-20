@@ -5,12 +5,7 @@ const questions = [
     difficulty: "easy",
     question: "What does CPU stand for?",
     correct_answer: "Central Processing Unit",
-    answers: [
-      "Central Processing Unit",
-      "Central Process Unit",
-      "Computer Personal Unit",
-      "Central Processor Unit"
-    ]
+    answers: ["Central Processing Unit", "Central Process Unit", "Computer Personal Unit", "Central Processor Unit"]
   },
   {
     category: "Science: Computers",
@@ -33,8 +28,7 @@ const questions = [
     category: "Science: Computers",
     type: "boolean",
     difficulty: "easy",
-    question:
-      "Pointers were not used in the original C programming language; they were added later on in C++.",
+    question: "Pointers were not used in the original C programming language; they were added later on in C++.",
     correct_answer: "False",
     answers: ["False", "True"]
   },
@@ -42,8 +36,7 @@ const questions = [
     category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
-    question:
-      "What is the most preferred image format used for logos in the Wikimedia database?",
+    question: "What is the most preferred image format used for logos in the Wikimedia database?",
     correct_answer: ".svg",
     answers: [".svg", ".png", ".jpeg", ".gif"]
   },
@@ -53,19 +46,13 @@ const questions = [
     difficulty: "easy",
     question: "In web design, what does CSS stand for?",
     correct_answer: "Cascading Style Sheet",
-    answers: [
-      "Cascading Style Sheet",
-      "Counter Strike: Source",
-      "Corrective Style Sheet",
-      "Computer Style Sheet"
-    ]
+    answers: ["Cascading Style Sheet", "Counter Strike: Source", "Corrective Style Sheet", "Computer Style Sheet"]
   },
   {
     category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
-    question:
-      "What is the code name for the mobile operating system Android 7.0?",
+    question: "What is the code name for the mobile operating system Android 7.0?",
     correct_answer: "Nougat",
     answers: ["Nougat", "Ice Cream Sandwich", "Jelly Bean", "Marshmallow"]
   },
@@ -89,8 +76,7 @@ const questions = [
     category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
-    question:
-      "Which programming language shares its name with an island in Indonesia?",
+    question: "Which programming language shares its name with an island in Indonesia?",
     correct_answer: "Java",
     answers: ["Java", "Python", "C", "Jakarta"]
   }
@@ -145,9 +131,11 @@ nextbtn.addEventListener(
     } else {
       displayquiz(questioncount);
       //   timerId();
-      numberOfQuestion.innerHTML =
-        questioncount + 1 + " of " + questions.length + " Question";
+      numberOfQuestion.innerHTML = questioncount + 1 + " of " + questions.length + " Question";
     }
+    count = 5;
+    displayNext();
+    clearInterval(timerId);
   })
 );
 
@@ -172,8 +160,7 @@ function quizCreator() {
     let div = document.createElement("div");
     div.classList.add("containerquestion", "hide");
     // question number
-    numberOfQuestion.innerHTML =
-      questioncount + 1 + " of " + questions.length + " Question";
+    numberOfQuestion.innerHTML = questioncount + 1 + " of " + questions.length + " Question";
     // question
 
     let question_DIV = document.createElement("h1");
@@ -214,8 +201,7 @@ const check = function (selected) {
   const solution = selected.innerText;
   const correctanswer = questions[questioncount].correct_answer;
   //   mi vado a prendere ogni singola domanda
-  let question =
-    document.getElementsByClassName("containerquestion")[questioncount];
+  let question = document.getElementsByClassName("containerquestion")[questioncount];
   // all'interno di ogni domanda mi prendo tutte le risposte
   let others = question.querySelectorAll(".option-div");
 
@@ -235,7 +221,7 @@ const check = function (selected) {
 //  Setup
 function initial() {
   questioncount = 0;
-  count = 31;
+  count = 5;
   scoreCount = 0;
   quizCreator();
   displayquiz(questioncount);
