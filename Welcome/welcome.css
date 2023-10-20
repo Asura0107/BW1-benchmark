@@ -3,7 +3,7 @@ body {
   background-size: cover;
   height: 100%;
   background-repeat: no-repeat;
-  margin: 80px;
+  margin: 50px;
 }
 /* header */
 header {
@@ -14,7 +14,7 @@ header {
   padding-left: 8px;
 }
 #epicode-container {
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 /* main */
 
