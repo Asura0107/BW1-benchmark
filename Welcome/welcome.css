@@ -3,7 +3,7 @@ body {
   background-size: cover;
   height: 100%;
   background-repeat: no-repeat;
-  margin: 50px;
+  margin: 80px;
 }
 /* header */
 header {
@@ -11,7 +11,7 @@ header {
 }
 #epicode-logo {
   width: 200px;
-  padding-left: 50px;
+  padding-left: 8px;
 }
 #epicode-container {
   margin-bottom: 100px;
@@ -22,14 +22,19 @@ p {
   font-size: 16px;
   color: white;
   font-family: "Inter", sans-serif;
-  font-weight: 400;
 }
 h1 {
   font-size: 60px;
   color: white;
   width: 100%;
   font-family: "Outfit", sans-serif;
+  font-style: 400;
 }
+
+h1 .span1 {
+  font-weight: bold;
+}
+
 /* instructions-container */
 #instructions-container p {
   margin-top: 5px;
@@ -60,6 +65,7 @@ li {
 
 #check {
   transform: scale(1.5);
+  cursor: pointer;
 }
 /* #buttons-area button:nth-child(1) {
   background-color: #0c113b;
