@@ -1,0 +1,352 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url(./b.week.gianni/assets/bg.jpg);
+  background-size: cover;
+  height: 100%;
+  background-repeat: no-repeat;
+  margin: 50px;
+  font-family: inter, sans-serif;
+}
+main {
+  text-align: center;
+  margin: 50px 100px;
+}
+#container-logo img {
+  width: 200px;
+  padding-left: 50px;
+}
+#container-logo {
+  display: inline-block;
+}
+.counter {
+  display: inline;
+  float: right;
+  padding-right: 100px;
+}
+
+.outer {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0, 7);
+  padding: 20px;
+}
+.inner {
+  height: 150px;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: inset 4px 4px 6px -1px (0, 0, 0, 0.2),
+    inset -4px -4px 6px -1px rgba(0, 0, 0, 0.2),
+    -0.5px -0.5px 0px rgba(255, 255, 255, 1), 0.5px 0.5px 0px rgba(0, 0, 0, 15),
+    0px 12px 10px -10px rgb(0, 0, 0.05);
+}
+.inner {
+  text-align: center;
+}
+
+.inner .timerDiv {
+  color: white;
+  position: absolute;
+  left: 35px;
+  top: 6px;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 20px;
+  font-family: inter, sans-serif;
+}
+
+.timer {
+  font-size: 30px;
+}
+.parag {
+  font-size: 30px;
+  font-weight: 600;
+}
+.circlesecond {
+  fill: none;
+  stroke: #faf3fa26;
+  stroke-width: 20px;
+  stroke-dasharray: 472;
+  stroke-dashoffset: 472;
+  animation: innerc linear forwards;
+}
+
+.circlefirst {
+  fill: none;
+  stroke: url(#GradientColor);
+  stroke-width: 20px;
+  stroke-dasharray: 472;
+  stroke-dashoffset: 472;
+  animation: anim linear forwards;
+}
+svg {
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+}
+
+@keyframes innerc {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+#countdown {
+  color: white;
+}
+
+.question {
+  color: aliceblue;
+  font-weight: 200;
+  font-size: 3rem;
+  font-family: Outift, sans-serif;
+  text-align: center;
+
+  margin-top: 225px;
+  font-weight: 700;
+}
+
+.option-div {
+  width: 250px;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  border-radius: 25px;
+  width: 400px;
+  padding: 15px 25px 15px 25px;
+  color: white;
+  background-color: transparent;
+  border: 2px transparent rgba(255, 255, 255, 0.715);
+  border-bottom: outset;
+  font-size: 1rem;
+  font-family: inter, sans-serif;
+  font-weight: 900;
+  display: inline-block;
+  margin: 20px 60px;
+}
+.option-div:hover {
+  background-color: #d20094;
+}
+.option-div:active {
+  transform: scale(0.95);
+}
+
+#switch-container {
+  color: white;
+  text-align: center;
+  margin: 50px;
+  font-size: 20px;
+}
+
+#switch-container span {
+  color: #bc008b;
+}
+.nextbtn {
+  width: 30px;
+}
+
+.hide {
+  display: none;
+}
+/* .option-div.active {
+    background-color: aquamarine;
+  } */
+
+.numberOfCount {
+  padding-left: 295px;
+  text-align: center;
+}
+.numberOfQuestion {
+  font-weight: 600;
+}
+footer {
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}
+.selected {
+  background-color: #d20094;
+}
+
+/* css per result page */
+
+.result {
+  color: whitesmoke;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+.circleContainer {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin: 80px 50px 0;
+}
+.outerresult {
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  padding: 20px;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+}
+.innerresult {
+  height: 260px;
+  width: 260px;
+  border-radius: 50%;
+  position: absolute;
+
+  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+    inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+    -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+    0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+}
+.circle1 {
+  fill: none;
+  stroke: url(#GradientColorresult);
+  stroke-width: 80px;
+  stroke-dasharray: 912;
+  stroke-dashoffset: 912;
+  animation: anima 2s linear forwards;
+}
+.circle2 {
+  fill: none;
+  stroke: #d20094;
+  stroke-width: 20px;
+  stroke-dasharray: 1100;
+  stroke-dashoffset: 1100;
+  animation: anime linear forwards;
+}
+.correct {
+  text-align: center;
+  margin: 0;
+}
+.correct h2,
+p {
+  margin: 10px;
+}
+.percCorrect,
+.percWrong {
+  font-size: 40px;
+  font-weight: 600;
+}
+.Wrong {
+  left: 40px;
+}
+.Wrong h2,
+p {
+  margin: 10px;
+}
+
+.fonth1 {
+  font-size: 60px;
+  font-weight: 700;
+}
+.footbtn {
+  /* text-align: center; */
+  margin: 80px 0 40px;
+}
+#rateus {
+  border: 2px solid white;
+  background-color: #90008026;
+  font-size: 20x;
+
+  padding: 10px 50px;
+  cursor: pointer;
+}
+.svgResult {
+  position: absolute;
+  top: 0;
+  left: 0;
+  top: -100px;
+}
+#numberresult {
+  position: absolute;
+  text-align: center;
+  top: 35px;
+  left: 5px;
+  padding: 10px 10px;
+}
+#numberresult h4 {
+  margin: 0 0 10px;
+}
+#numberresult span {
+  color: #00ffff;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.titleresult {
+  margin-bottom: 5px;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+section {
+  display: inline-block;
+  vertical-align: -webkit-baseline-middle;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Outfit", sans-serif;
+}
+h4 {
+  font-size: 16px;
+  font-weight: 700;
+}
+h2,
+h3 {
+  font-weight: 400;
+  font-size: 25px;
+}
+h2 {
+  font-size: 40px;
+}
+
+button {
+  border: 2px solid white;
+  background-color: #90008026;
+  font-size: 20x;
+  color: white;
+  padding: 10px 50px;
+  cursor: pointer;
+  background-color: #2c295600;
+  font-family: inter, sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+}
+@keyframes anime {
+  100% {
+    stroke-dashoffset: 200;
+  }
+}
+/* @keyframes anima {
+  100% {
+    stroke-dashoffset: 500;
+  }
+} */
+#nextbtn,
+.numberOfCount {
+  display: inline-block;
+  vertical-align: baseline;
+}
+#nextbtn {
+  float: right;
+  margin-top: 40px;
+}
+#nextbtn:hover {
+  background-color: #d20094;
+}
+#nextbtn:active {
+  transform: scale(0.95);
+}
+.numberOfCount {
+  text-align: center;
+}

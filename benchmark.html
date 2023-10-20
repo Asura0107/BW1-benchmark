@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- <link rel="stylesheet" href="../Assets/reset.css" /> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./benchmark.css" />
+  </head>
+  <body>
+    <header>
+      <div id="container-logo">
+        <img src="./b.week.gianni/assets/epicode_logo.png" alt="" />
+      </div>
+      <div class="counter">
+        <div class="outer">
+          <div class="inner">
+            <div class="timerDiv">
+              <p>SECONDS</p>
+              <p class="timer"></p>
+              <p>remaining</p>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+              <defs>
+                <linearGradient id="GradientColor">
+                  <stop offset="0%" stop-color="#00FFFF" />
+                  <stop offset="100%" stop-color="#00FFFF" />
+                </linearGradient>
+              </defs>
+              <circle cx="80" cy="80" r="70" class="circlesecond" />
+              <circle cx="80" cy="80" r="70" class="circlefirst js-circlefirst" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div id="displayContainer">
+        <div class="container">
+          <h1 class="question"></h1>
+          <!-- domande e optioni qui -->
+        </div>
+        <button id="nextbtn">Next →</button>
+      </div>
+
+      <!-- da qui inizia il foglio di result -->
+      <div class="result hide">
+        <div class="titleresult">
+          <h1 class="fonth1">Results</h1>
+          <h3>The summary of your answers:</h3>
+        </div>
+        <section class="correct">
+          <div>
+            <h2>Correct</h2>
+            <p class="percCorrect"></p>
+            <p class="correctAnswer"></p>
+          </div>
+        </section>
+        <section class="circleContainer">
+          <div class="outerresult">
+            <div class="innerresult">
+              <div id="numberresult">
+                <h4>Congratulation!</h4>
+                <span>You passed the exam.</span>
+                <br />
+                <br />
+                <p>We'll send you the certificate in few minutes. Check your email (includin promotion/spam folder)</p>
+              </div>
+            </div>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="400px" height="400px" class="svgResult">
+            <defs>
+              <linearGradient id="GradientColorresult">
+                <stop offset="0%" stop-color="#00FFFF" />
+                <stop offset="100%" stop-color="#00FFFF" />
+              </linearGradient>
+            </defs>
+            <circle cx="150" cy="150" r="140" class="circle2" />
+            <circle cx="150" cy="150" r="140" class="circle1 js-progressbar" />
+          </svg>
+        </section>
+        <section class="Wrong">
+          <div>
+            <h2>Wrong</h2>
+            <p class="percWrong"></p>
+            <p class="wrongAnswer"></p>
+          </div>
+        </section>
+
+        <div class="footbtn">
+          <button type="button" id="rateUs">
+            <a href="./Feedback/feedback.html">RATE US</a>
+          </button>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="numberOfCount">
+        <span class="numberOfQuestion"></span>
+      </div>
+    </footer>
+    <script src="./benchmark.js"></script>
+  </body>
+</html>

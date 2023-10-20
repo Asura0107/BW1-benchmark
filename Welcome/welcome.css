@@ -1,0 +1,96 @@
+body {
+  background-image: url(./Assets/bg.jpg);
+  background-size: cover;
+  height: 100%;
+  background-repeat: no-repeat;
+  margin: 80px;
+}
+/* header */
+header {
+  width: 100%;
+}
+#epicode-logo {
+  width: 200px;
+  padding-left: 8px;
+}
+#epicode-container {
+  margin-bottom: 100px;
+}
+/* main */
+
+p {
+  font-size: 16px;
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+h1 {
+  font-size: 60px;
+  color: white;
+  width: 100%;
+  font-family: "Outfit", sans-serif;
+  font-style: 400;
+}
+
+h1 .span1 {
+  font-weight: bold;
+}
+
+/* instructions-container */
+#instructions-container p {
+  margin-top: 5px;
+}
+h3 {
+  color: #900080;
+  font-size: 2rem;
+  margin-top: 20px;
+  font-weight: 700;
+  font-family: "Outfit", sans-serif;
+}
+
+ul {
+  margin-top: 50px;
+  color: white;
+  font-size: 16px;
+  margin-left: 30px;
+  font-family: "Inter", sans-serif;
+}
+li {
+  padding: 5px;
+}
+/* section */
+/* button-area */
+#buttons-area {
+  margin-top: 100px;
+}
+
+#check {
+  transform: scale(1.5);
+  cursor: pointer;
+}
+/* #buttons-area button:nth-child(1) {
+  background-color: #0c113b;
+  height: 16px;
+  border-style: solid;
+  border-color: white;
+  border-width: 2px; */
+/* } */
+#proceed-button {
+  background-color: #00ffff;
+  padding: 10px 50px;
+  font-size: 2rem;
+  display: inline;
+  float: right;
+  box-shadow: 0px 0px 20px 0px #00ffff;
+  border-width: 0;
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+}
+#buttons-area p {
+  display: inline-block;
+  margin-left: 10px;
+
+  margin-top: 20px;
+}
+a {
+  text-decoration: none;
+}
