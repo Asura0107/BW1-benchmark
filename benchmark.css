@@ -31,15 +31,18 @@ main {
   height: 150px;
   width: 150px;
   border-radius: 50%;
-  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15), -6px -6px 10px -1px rgba(255, 255, 255, 0, 7);
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0, 7);
   padding: 20px;
 }
 .inner {
   height: 150px;
   border-radius: 50%;
   position: absolute;
-  box-shadow: inset 4px 4px 6px -1px (0, 0, 0, 0.2), inset -4px -4px 6px -1px rgba(0, 0, 0, 0.2),
-    -0.5px -0.5px 0px rgba(255, 255, 255, 1), 0.5px 0.5px 0px rgba(0, 0, 0, 15), 0px 12px 10px -10px rgb(0, 0, 0.05);
+  box-shadow: inset 4px 4px 6px -1px (0, 0, 0, 0.2),
+    inset -4px -4px 6px -1px rgba(0, 0, 0, 0.2),
+    -0.5px -0.5px 0px rgba(255, 255, 255, 1), 0.5px 0.5px 0px rgba(0, 0, 0, 15),
+    0px 12px 10px -10px rgb(0, 0, 0.05);
 }
 .inner {
   text-align: center;
@@ -60,6 +63,14 @@ main {
   font-size: 30px;
   font-weight: 600;
 }
+.circlesecond {
+  fill: none;
+  stroke: #faf3fa26;
+  stroke-width: 20px;
+  stroke-dasharray: 472;
+  stroke-dashoffset: 472;
+  animation: innerc linear forwards;
+}
 
 .circlefirst {
   fill: none;
@@ -68,14 +79,6 @@ main {
   stroke-dasharray: 472;
   stroke-dashoffset: 472;
   animation: anim linear forwards;
-}
-.circlesecond {
-  stroke: #faf3fa26;
-  stroke-width: 20px;
-  stroke-dasharray: 472;
-  stroke-dashoffset: 472;
-  fill: none;
-  animation: innerc linear forwards;
 }
 svg {
   top: 0;
@@ -149,11 +152,11 @@ svg {
 /* .option-div.active {
     background-color: aquamarine;
   } */
-  
-  .numberOfCount {
-   padding-left: 130px;
-    text-align: center;
-  }
+
+.numberOfCount {
+  padding-left: 130px;
+  text-align: center;
+}
 footer {
   margin: 0 auto;
   text-align: center;
@@ -181,7 +184,8 @@ footer {
   width: 300px;
   border-radius: 50%;
   padding: 20px;
-  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15), -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
 }
 .innerresult {
   height: 260px;
@@ -189,9 +193,10 @@ footer {
   border-radius: 50%;
   position: absolute;
 
-  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2), inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
-    -0.5px -0.5px 0px rgba(255, 255, 255, 1), 0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
-    0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+    inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+    -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+    0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);
 }
 .circle1 {
   fill: none;
