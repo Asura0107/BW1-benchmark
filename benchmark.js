@@ -117,6 +117,7 @@ function countdown() {
   const timeLeft = document.querySelector(".timer");
   timeLeft.innerHTML = count;
   count--;
+  progressseconds();
   if (count === 0) {
     clearInterval(countdown);
     displaynext();
@@ -269,3 +270,12 @@ const progress = function () {
   progressBar.style.strokeDashoffset = strokeDashOffsetValue;
 };
 // il tutto viene messo all'interno del nextbtn così va araccogliere i dati volta per volta
+
+const progressseconds = function () {
+  const progressSeconds = document.querySelector(".js-circlefirst");
+  // dato che non ho un array ma conosco il totale dei secondi che devono passare, inserisco quel totale qui
+  const percprogr = (count / 30) * 100;
+  const firstlength = 472;
+  const strokeDashOffsetValue = firstlength - (firstlength * percprogr) / 100;
+  progressSeconds.style.strokeDashoffset = strokeDashOffsetValue;
+};
