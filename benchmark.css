@@ -99,14 +99,16 @@ svg {
   margin-top: 225px;
   font-weight: 700;
 }
-
+.containerquestion {
+  
+}
 .option-div {
   width: 250px;
   text-align: center;
   outline: none;
   cursor: pointer;
   border-radius: 25px;
- 
+ width: 400px;
   padding: 15px 25px 15px 25px;
   color: white;
   background-color: transparent;
@@ -116,7 +118,7 @@ svg {
   font-family: inter, sans-serif;
   font-weight: 600;
   display: inline-block;
-  margin: 20px 100px;
+ margin: 20px 60px;
 }
 .option-div:hover {
   background-color: #d20094;
