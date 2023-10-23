@@ -108,6 +108,8 @@ const percWrong = document.querySelector(".percWrong");
 const correctAnswer = document.querySelector(".correctAnswer");
 const wrongAnswer = document.querySelector(".wrongAnswer");
 const dissapear = document.querySelector(".counter");
+const again = document.querySelector(".numberresult2");
+const win = document.getElementById("numberresult");
 
 let questioncount;
 let scoreCount;
@@ -149,8 +151,7 @@ nextbtn.addEventListener(
     } else {
       displayquiz(questioncount);
 
-      numberOfQuestion2.innerHTML =
-        "QUESTION " + (questioncount + 1);
+      numberOfQuestion2.innerHTML = "QUESTION " + (questioncount + 1);
       // per fare ricominciare il timer ad ogni click del pulsante next
       // bisogna fare ricominciare il timer dandogli un tempo , quindi tre secondi, e togliendo il tempo precedente
       // cioè usando clearinterval. Dopo avergli azzerato il tempo precedente e avergli un dato un altro limite (i trenta secondi)
@@ -183,8 +184,7 @@ function quizCreator() {
     let div = document.createElement("div");
     div.classList.add("containerquestion", "hide");
     // question number
-    numberOfQuestion2.innerHTML =
-    "QUESTION " + (questioncount + 1);
+    numberOfQuestion2.innerHTML = "QUESTION " + (questioncount + 1);
     // question
 
     let question_DIV = document.createElement("h1");
@@ -267,12 +267,19 @@ const progress = function () {
   const percentageCorrect = (scoreCount / questions.length) * 100;
   const circleLength = 912; // lunghezza totale del cerchio
   //   valore della stroke in base alla percentuale
+  win.classList.add("hide");
+  again.classList.add("hide");
   const strokeDashOffsetValue =
     circleLength - (circleLength * percentageCorrect) / 100;
   // vado a prendermi la classe del cerchio la cui stroke aumenta
   const progressBar = document.querySelector(".js-progressbar");
   //   e ci attribuisco il valore trovato in precedenza
   progressBar.style.strokeDashoffset = strokeDashOffsetValue;
+  if (percentageCorrect >= 60) {
+    win.classList.remove("hide");
+  } else {
+    again.classList.remove("hide");
+  }
 };
 // il tutto viene messo all'interno del nextbtn così va araccogliere i dati volta per volta
 
