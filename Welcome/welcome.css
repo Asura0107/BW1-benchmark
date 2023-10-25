@@ -84,6 +84,7 @@ li {
   border-width: 0;
   font-family: "Outfit", sans-serif;
   font-weight: 700;
+  cursor: pointer;
 }
 #buttons-area p {
   display: inline-block;
